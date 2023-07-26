@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Body background color */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        h1, h3 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            padding: 0 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .section {
+            background-color: #f9f9f9; /* Background color for sections */
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+			color: #4169E1;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .image-container img {
+            max-height: 50%;
+            max-width: 50%;
+            margin-right: 30px;
+        }
+
+        .name-container {
+            text-align: center;
+        }
+
+        .name {
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 10px;
+			color#000000;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <nav style="text-align:left;">
+        <ul>
+            <li><a href="#" id="showAboutLink">About</a></li>
+            <li><a href="#" id="showSkillsLink">Skills</a></li>
+            <li><a href="#" id="showAchievementsLink">Achievements</a></li>
+            <li><a href="#" id="showResumeLink">Resume</a></li>
+            <li><a href="#" id="showContactLink">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Image on the left, center in the page -->
+        <div class="image-container">
+            <img src="./images/ezhil2.jpg" alt="Unable" width="20%" height="20%">
+            <div class="name-container">
+                <div class="name" style="font-size:50px;">Ezhil Venthan</div>
+            </div>
+        </div>
+
+        <!-- About Me section -->
+        <section id="about" class="section hidden">
+            <h2 style="color: #000000;">About Me</h2>
+            <p>
+				Hi I'm Ezhil Venthan, I was born in Chennai.</p>
+				<p>Address: No.12 Davidson St, Broadway, Chennai</p> 
+				<p> Currently I'm a BCA studying student at Dr. M.G.R University. Specifically my hope to be a Web Developer in IT field </p>  
+            
+        </section>
+
+        <!-- Skills section -->
+        <section id="skills" class="section hidden">
+		<div style="font-size: 25px;"> 
+            <h2>Skills</h2>
+            <ul>
+                <li>Problem Solving</li>
+				<li>Team Collaboration</li>
+				<li>Time Management</li>
+				<li>Communication</li>
+            </ul>
+			</div>
+        </section>
+
+        <!-- Achievements section -->
+        <section id="achievements" class="section hidden">
+            <h2>Achievements</h2>
+            <ul style="list-style-type:square;">
+                <li>NPTEL Certification In Cloud Computing And Distributed System</li>
+				<li>Collaborated on Multi-team Projects</li>
+            </ul>
+        </section>
+
+        <!-- Resume section -->
+        <section id="resume" class="section hidden">
+            <h2>Resume</h2>
+            <p>
+                Add your resume content here and provide an option to view the resume PDF below:
+            </p>
+            <div class="resume-pdf">
+                <a href="./images/ezhil203.pdf" target="_blank">View Resume PDF</a>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact" class="section hidden">
+            <h2>Contact</h2>
+            <p style="font-size: 25px;">
+                <img src="./images/envelope-g0a3b35de8_1280.png" alt="Unable" width="30px" height="30px" padding-top="5px">Email: ezhilventhan1410@gmail.com<br><br>
+                <img src="./images/icons8-phone-50.png" alt="Unable" width="30px" height="30px">Phone: 9150972093<br>
+                
+            </p>
+        </section>
+    </main>
+</body>
+</html>
+
+<!-- JavaScript to handle the visibility of the sections -->
+<script>
+    // ... (previous script content) ...
+
+    // Function to toggle the visibility of sections
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach((section) => {
+            if (section.id === sectionId) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+    }
+
+    // Add event listeners to the links
+    showAboutLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        showSection('about');
+    });
+
+    showSkillsLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        showSection('skills');
+    });
+
+    showAchievementsLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        showSection('achievements');
+    });
+
+    showResumeLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        showSection('resume');
+    });
+
+    showContactLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        showSection('contact');
+    });
+</script>
